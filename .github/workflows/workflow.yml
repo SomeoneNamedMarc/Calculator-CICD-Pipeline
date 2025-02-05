@@ -39,12 +39,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with: 
           name: Coverages
-          path: Calculator-CICD-Pipeline/coverage-report/
+          path: coverage-report/
 
       - name: Collect Stryker Report
         if: always() # Complete this step so it uploads the Stryker report to the artifacts - make it run always even if previous steps fail
         uses: actions/upload-artifact@v4
         with: 
           name: Mutants
-          path: Calculator-CICD-Pipeline/StrykerOutput/**/reports/
+          path: StrykerOutput/**/reports/
     
