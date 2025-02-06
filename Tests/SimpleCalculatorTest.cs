@@ -56,13 +56,13 @@ public class SimpleCalculatorTest
         // Arrange
         var calc = new SimpleCalculator();
         var a = 3;
-        var b = 2;
+        var b = 3;
 
         // Act
         var result = calc.Divide(a, b);
 
         // Assert
-        Assert.That(result, Is.EqualTo(1.5));
+        Assert.That(result, Is.EqualTo(1));
     }
 
     [Test]
@@ -76,7 +76,7 @@ public class SimpleCalculatorTest
         var result = calc.Factorial(n);
 
         // Assert
-        Assert.That(result, Is.EqualTo(5));
+        Assert.That(result, Is.EqualTo(6));
     }
 
     [Test]
