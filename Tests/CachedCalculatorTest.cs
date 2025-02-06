@@ -105,7 +105,7 @@ public class CachedCalculatorTest
         calc.Multiply(a, b);
         var result = calc.Multiply(a, b);
 
-        // Assert
+        // Assert reee
         Assert.That(result, Is.EqualTo(9));
     }
 
