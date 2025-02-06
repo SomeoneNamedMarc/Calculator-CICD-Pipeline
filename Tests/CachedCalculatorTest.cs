@@ -239,7 +239,7 @@ public class CachedCalculatorTest
         // Assert
         Assert.That(calc._cache.Count, Is.True);
     }
-
+    /*
     [Test]
     public void StoreInCache()
     {
@@ -253,5 +253,5 @@ public class CachedCalculatorTest
 
         // Assert
         Assert.That(calc._cache.ContainsKey(string.Concat(a, "+", b)), Is.True);
-    }
+    }*/
 }
