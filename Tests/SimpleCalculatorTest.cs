@@ -153,7 +153,7 @@ public class SimpleCalculatorTest
     {
         // Arrange
         var calc = new SimpleCalculator();
-        var n = 4;
+        var n = 2;
 
         // Act
         var result = calc.IsPrime(n);
