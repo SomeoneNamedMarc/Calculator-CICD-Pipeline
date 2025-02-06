@@ -94,6 +94,7 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(6));
     }
 
+    [Test]
     public void Multiply_2()
     {
         // Arrange
@@ -124,6 +125,7 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(1));
     }
 
+    [Test]
     public void Divide_2()
     {
         // Arrange
@@ -152,6 +154,7 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(6));
     }
 
+    [Test]
     public void Factorial_2()
     {
         // Arrange
@@ -222,6 +225,7 @@ public class CachedCalculatorTest
         // Assert
         Assert.That(result, Is.False);
     }
+    [Test]
     public void IsPrime_4()
     {
         // Arrange
@@ -236,6 +240,7 @@ public class CachedCalculatorTest
         Assert.That(calc._cache.Count, Is.True);
     }
 
+    [Test]
     public void StoreInCache()
     {
         // Arrange
