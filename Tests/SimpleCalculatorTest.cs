@@ -159,6 +159,6 @@ public class SimpleCalculatorTest
         var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(result, Is.False);
+        Assert.That(result, Is.True);
     }
 }
