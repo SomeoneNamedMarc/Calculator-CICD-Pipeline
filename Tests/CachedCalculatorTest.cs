@@ -237,7 +237,7 @@ public class CachedCalculatorTest
         var b = 1;
 
         // Act
-        var result = calc.Add(a, b));
+        var result = calc.Add(a, b);
 
         // Assert
         Assert.That(calc._cache.ContainsKey(string.Concat(a, "+", b)), Is.True);
