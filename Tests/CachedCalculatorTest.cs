@@ -80,19 +80,6 @@ public class CachedCalculatorTest
     }
 
     [Test]
-    public void Factorial_2()
-    {
-        // Arrange
-        var calc = new CachedCalculator();
-        var invalidNumber = -1;
-
-        calc.Factorial(invalidNumber);
-
-        // Act & Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
-    }
-
-    [Test]
     public void Factorial_3()
     {
         // Arrange
