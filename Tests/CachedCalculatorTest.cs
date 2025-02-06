@@ -77,6 +77,22 @@ public class CachedCalculatorTest
     }
 
     [Test]
+    public void Subtract_3()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 2;
+        var b = 3;
+
+        // Act
+        calc.Subtract(a, b);
+        var result = calc.Subtract(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(-1));
+    }
+
+    [Test]
     public void Multiply()
     {
         // Arrange
