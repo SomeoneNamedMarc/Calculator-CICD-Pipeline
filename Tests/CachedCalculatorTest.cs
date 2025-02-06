@@ -220,6 +220,7 @@ public class CachedCalculatorTest
         var n = 4;
 
         // Act
+        calc.IsPrime(n);
         var result = calc.IsPrime(n);
 
         // Assert
