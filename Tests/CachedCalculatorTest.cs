@@ -238,7 +238,7 @@ public class CachedCalculatorTest
         var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.True);
+        Assert.That(calc._cache.Count, Is.EqualTo(1));
     }
     /*
     [Test]
