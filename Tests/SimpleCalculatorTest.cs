@@ -87,7 +87,8 @@ public class SimpleCalculatorTest
         var invalidNumber = -1;
 
         // Act & Assert
-        Assert.Throws<ArgumentException>(() => calc.Factorial(invalidNumber));
+        var ex = Assert.Throws<ArgumentException>(() => calc.Factorial(invalidNumber));
+        Assert.That(ex.Message, Is.EqualTo("Factorial is not defined for negative numbers"));
     }
 
     [Test]
@@ -102,6 +103,20 @@ public class SimpleCalculatorTest
 
         // Assert
         Assert.That(result, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void Factorial_4()
+    {
+        // Arrange
+        var calc = new SimpleCalculator();
+        var n = 0;
+
+        // Act
+        var result = calc.Factorial(n);
+
+        // Assert
+        Assert.That(result, Is.LessThan(2));
     }
 
 
