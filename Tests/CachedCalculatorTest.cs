@@ -13,10 +13,39 @@ public class CachedCalculatorTest
         var b = 3;
 
         // Act
+        var result = calc.Add(a, b);
+
+        // Assert
+        Assert.That(result., Is.EqualTo(5));
+    }
+    public void Add_2()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 2;
+        var b = 3;
+
+        // Act
         calc.Add(a, b);
 
         // Assert
         Assert.That(calc._cache.Count, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void Add_3()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 2;
+        var b = 3;
+
+        // Act
+        calc.Add(a, b);
+        var result = calc.Add(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(5));
     }
 
     [Test]
@@ -28,10 +57,10 @@ public class CachedCalculatorTest
         var b = 3;
 
         // Act
-        calc.Subtract(a, b);
+        var result = calc.Subtract(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.EqualTo(-1));
     }
 
     [Test]
@@ -43,10 +72,10 @@ public class CachedCalculatorTest
         var b = 3;
 
         // Act
-        calc.Multiply(a, b);
+        var result = calc.Multiply(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.EqualTo(6));
     }
 
 
@@ -56,13 +85,13 @@ public class CachedCalculatorTest
         // Arrange
         var calc = new CachedCalculator();
         var a = 3;
-        var b = 2;
+        var b = 3;
 
         // Act
-        calc.Divide(a, b);
+        var result = calc.Divide(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.EqualTo(1));
     }
 
     [Test]
@@ -73,10 +102,10 @@ public class CachedCalculatorTest
         var n = 3;
 
         // Act
-        calc.Factorial(n);
+        var result = calc.Factorial(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.EqualTo(6));
     }
 
     [Test]
@@ -87,10 +116,10 @@ public class CachedCalculatorTest
         var n = 0;
 
         // Act
-        calc.Factorial(n);
+        var result = calc.Factorial(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.EqualTo(1));
     }
 
 
@@ -102,10 +131,10 @@ public class CachedCalculatorTest
         var n = 5;
 
         // Act
-        calc.IsPrime(n);
+        var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.True);
     }
 
     [Test]
@@ -116,10 +145,10 @@ public class CachedCalculatorTest
         var n = 1;
 
         // Act
-        calc.IsPrime(n);
+        var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.False);
     }
 
     [Test]
@@ -130,9 +159,9 @@ public class CachedCalculatorTest
         var n = 4;
 
         // Act
-        calc.IsPrime(n);
+        var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.False);
     }
 }
