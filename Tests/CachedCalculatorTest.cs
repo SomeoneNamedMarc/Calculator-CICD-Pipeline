@@ -106,7 +106,7 @@ public class CachedCalculatorTest
         var result = calc.Multiply(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(9));
+        Assert.That(result, Is.EqualTo(9));
     }
 
     [Test]
@@ -136,7 +136,7 @@ public class CachedCalculatorTest
         var result = calc.Divide(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(result, Is.EqualTo(1));
     }
     [Test]
     public void Factorial()
@@ -163,7 +163,7 @@ public class CachedCalculatorTest
         var result = calc.Factorial(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(6));
+        Assert.That(result, Is.EqualTo(6));
     }
     [Test]
     public void Factorial_3()
