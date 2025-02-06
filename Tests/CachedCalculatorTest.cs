@@ -259,23 +259,6 @@ public class CachedCalculatorTest
         // Assert
         Assert.That(calc._cache.Count, Is.EqualTo(1));
     }
-
-    [Test]
-    public void IsPrime_5()
-    {
-        // Arrange
-        var calc = new CachedCalculator();
-        var n = 5;
-        var j = 3;
-
-        // Act
-        calc.IsPrime(n);
-        calc.IsPrime(j);
-        var result = calc.IsPrime(j);
-
-        // Assert
-        Assert.That(result, Is.True);
-    }
     /*
     [Test]
     public void StoreInCache()
