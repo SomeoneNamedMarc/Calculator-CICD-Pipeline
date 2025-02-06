@@ -48,6 +48,25 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(5));
     }
 
+
+    [Test]
+    public void Add_4()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var n = 5;
+        var j = 3;
+        var k = 3;
+
+        // Act
+        calc.Add(n,j);
+        calc.Add(j, k);
+        var result = calc.Add(j, k);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(6));
+    }
+
     [Test]
     public void Subtract()
     {
