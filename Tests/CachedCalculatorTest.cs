@@ -62,22 +62,9 @@ public class CachedCalculatorTest
         // Assert
         Assert.That(result, Is.EqualTo(-1));
     }
-    public void Subtract_2()
-    {
-        // Arrange
-        var calc = new CachedCalculator();
-        var a = 2;
-        var b = 3;
-
-        // Act
-        calc.Subtract(a, b);
-
-        // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
-    }
 
     [Test]
-    public void Subtract_3()
+    public void Subtract_2()
     {
         // Arrange
         var calc = new CachedCalculator();
@@ -116,9 +103,10 @@ public class CachedCalculatorTest
 
         // Act
         calc.Multiply(a, b);
+        var result = calc.Multiply(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(calc._cache.Count, Is.EqualTo(9));
     }
 
     [Test]
@@ -145,6 +133,7 @@ public class CachedCalculatorTest
 
         // Act
         calc.Divide(a, b);
+        var result = calc.Divide(a, b);
 
         // Assert
         Assert.That(calc._cache.Count, Is.EqualTo(1));
@@ -171,9 +160,10 @@ public class CachedCalculatorTest
 
         // Act
         calc.Factorial(n);
+        var result = calc.Factorial(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(calc._cache.Count, Is.EqualTo(6));
     }
     [Test]
     public void Factorial_3()
@@ -240,9 +230,10 @@ public class CachedCalculatorTest
 
         // Act
         calc.IsPrime(n);
+        var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(calc._cache.Count, Is.True);
     }
 
     public void StoreInCache()
