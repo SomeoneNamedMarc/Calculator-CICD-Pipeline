@@ -3,7 +3,7 @@ name: Upload to FTP Server
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   integration:
