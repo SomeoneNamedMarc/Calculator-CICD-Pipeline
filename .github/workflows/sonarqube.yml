@@ -19,9 +19,9 @@ jobs:
           dotnet tool install -g dotnet-reportgenerator-globaltool
           
       - name: Start Static Code Analysis
-        run: | # INSERT RELEVANT VARIABLES BELOW
+        run: |
           dotnet sonarscanner begin \
-            /k:${{ vars.SONAR_PROJECT_KEY }} \ 
+            /k:${{ vars.SONAR_PROJECT_KEY }} \
             /d:sonar.host.url=${{ vars.SONAR_HOST }} \
             /d:sonar.token=${{ vars.SONAR_TOKEN }} \
             /d:sonar.coverageReportPaths="coverage-report/SonarQube.xml" \
@@ -37,11 +37,11 @@ jobs:
       - name: Generate report
         run: |
           reportgenerator \
-          -reports:TestResults/**/coverage.cobertura.xml \
-          -targetdir:coverage-report \
-          -reporttypes:SonarQube
+            -reports:TestResults/**/coverage.cobertura.xml \
+            -targetdir:coverage-report \
+            -reporttypes:SonarQube
 
       - name: Complete Static Code Analysis
-        run: | # INSERT RELEVANT VARIABLES BELOW
+        run: |
           dotnet sonarscanner end \
             /d:sonar.token=${{ vars.SONAR_TOKEN }}
