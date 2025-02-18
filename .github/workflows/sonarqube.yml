@@ -28,20 +28,20 @@ jobs:
             /d:sonar.qualitygate.wait=true \
             /d:sonar.qualitygate.timeout=300
 
-        - name: Build
-          run: dotnet build
+      - name: Build
+        run: dotnet build
 
-        - name: Run unit tests
-          run: dotnet test --collect:"XPlat Code Coverage" --results-directory TestResults
+      - name: Run unit tests
+        run: dotnet test --collect:"XPlat Code Coverage" --results-directory TestResults
 
-        - name: Generate report
-          run: |
-            reportgenerator \
-            -reports:TestResults/**/coverage.cobertura.xml \
-            -targetdir:coverage-report \
-            -reporttypes:SonarQube
+      - name: Generate report
+        run: |
+          reportgenerator \
+          -reports:TestResults/**/coverage.cobertura.xml \
+          -targetdir:coverage-report \
+          -reporttypes:SonarQube
 
-        - name: Complete Static Code Analysis
-          run: | # INSERT RELEVANT VARIABLES BELOW
-            dotnet sonarscanner end \
-              /d:sonar.token="---SONAR-TOKEN-GOES-HERE-AGAIN---"
+      - name: Complete Static Code Analysis
+        run: | # INSERT RELEVANT VARIABLES BELOW
+          dotnet sonarscanner end \
+            /d:sonar.token=${{ vars.SONAR_TOKEN }}
