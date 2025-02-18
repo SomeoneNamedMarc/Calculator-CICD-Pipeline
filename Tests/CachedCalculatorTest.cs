@@ -31,7 +31,7 @@ public class CachedCalculatorTest
         calc.Add(a, b);
 
         // Assert
-        Assert.That(calc._cache, Has.Count.EqualTo(1));
+        Assert.That(calc.Cache, Has.Count.EqualTo(1));
     }
 
     [Test]
@@ -259,7 +259,7 @@ public class CachedCalculatorTest
         var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(calc._cache, Has.Count.EqualTo(1));
+        Assert.That(calc.Cache, Has.Count.EqualTo(1));
     }
     /*
     [Test]
@@ -274,6 +274,6 @@ public class CachedCalculatorTest
         var result = calc.Add(a, b);
 
         // Assert
-        Assert.That(calc._cache.ContainsKey(string.Concat(a, "+", b)), Is.True);
+        Assert.That(calc.Cache.ContainsKey(string.Concat(a, "+", b)), Is.True);
     }*/
 }
