@@ -18,6 +18,8 @@ public class CachedCalculatorTest
         // Assert
         Assert.That(result, Is.EqualTo(5));
     }
+
+    [Test]
     public void Add_2()
     {
         // Arrange
@@ -29,7 +31,7 @@ public class CachedCalculatorTest
         calc.Add(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(calc._cache, Has.Count.EqualTo(1));
     }
 
     [Test]
@@ -257,7 +259,7 @@ public class CachedCalculatorTest
         var result = calc.IsPrime(n);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(calc._cache, Has.Count.EqualTo(1));
     }
     /*
     [Test]
